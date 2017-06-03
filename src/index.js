@@ -1,10 +1,7 @@
 import translate from './translation';
-import { streamToFile } from './voiceStream';
+import { streamToParser } from './voiceStream';
 
-streamToFile('streams/test.wav')
-.then(()=>{
-  console.log('time to parse!')
-})
+streamToParser();
 
 /* translation code below. Its functional, but keep it off for now. */
 
