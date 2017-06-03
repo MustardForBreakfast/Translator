@@ -17,6 +17,7 @@ Sadly the translation API aint free. Thankfully, as of this writing, Google offe
 
 ## Installation
 
+- `brew install sox`, and add it to your PATH
 - `npm install`
 - copy and rename `ENV_template.js` to `ENV.js`, fill in the values you obtained in the `Requirements` section above.
 
