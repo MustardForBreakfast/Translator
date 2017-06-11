@@ -4,4 +4,5 @@ export default {
   voiceThreshold: .6,
   encoding: 'LINEAR16',
   inputLanguage: 'en-US',
+  keyFilename: './_keyFile.json',
 }

@@ -2,6 +2,9 @@ import fs from 'fs';
 import record from 'node-record-lpcm16';
 import Speech from '@google-cloud/speech';
 import constants from './constants';
+import _ENV from '../_ENV';
+
+const projectID = _ENV.projectID;
 
 export function streamToFile(){
   return new Promise((resolve, reject)=>{
@@ -28,7 +31,10 @@ export function streamToFile(){
 };
 
 export function streamToParser(){
-  const speech = Speech();
+  const speech = Speech({
+    projectId: projectID,
+    keyFilename: constants.keyFilename,
+  });
   const request = {
     config: {
       encoding: constants.encoding,
@@ -40,12 +46,13 @@ export function streamToParser(){
 
   const recognizeStream = speech.createRecognizeStream(request)
   .on('error', console.error)
-  .on('data', (data) => console.log(data.results));
-  // process.stdout.write
+  .on('data', (data) => {
+    console.log(data.results)
+  });
 
   record
   .start({
-    sampleRateHertz: constants.sampleRate,
+    sampleRate: constants.sampleRate,
     threshold: constants.voiceThreshold,
     verbose: true,
     silence: '5.0'

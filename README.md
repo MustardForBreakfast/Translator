@@ -12,6 +12,8 @@ Once you've installed the SDK, you will need to create a set of application cred
 Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dashboard), you will need to do the following: 
 - create a Google Cloud project and obtain a projectID. Enable Billing.
 - enable the Google Cloud Translation API and obtain an API key via the "Credentials" menu. 
+- enable the Google Cloud Speech API 
+- create a service account via the "Credentials" menu and generate/download a JSON keyFile for it. Save the keyFile to the project root directory as 'keyFile.json'.
 
 Sadly the translation API aint free. Thankfully, as of this writing, Google offers $300 in free credit on a trial account. So... free?
 
