@@ -22,7 +22,7 @@ Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dash
 - copy and rename `ENV_template.js` to `ENV.js`, fill in any values you obtained in the `Requirements` section above.
 
 ## Execution
-- `npm start`, wait for "Google is listening..." in the terminal, and start speaking in english!
+- `npm start`, wait for "Google is listening..." in the terminal, and start sayin stuff!
 
 ## Tips
 - For best results, go somewhere quiet.
