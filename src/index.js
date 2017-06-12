@@ -3,26 +3,13 @@ import { streamToParser } from './voiceStream';
 import constants from './constants';
 import * as child from 'child_process';
 
+const targetLang = constants.targetLang;
+
 let stuffToSay = [];
 let isSpeaking = false;
 
 streamToParser(handleParsed);
 
-// Set the target language:
-const targetLang = 'ru';
-
-/* full list of language codes: https://cloud.google.com/translate/docs/languages 
-
-  Currently hooked up: 
-    - English: en
-    - Spanish: es
-    - French: fr
-    - Italian: it
-    - Russian: ru
-    - German: de
-    - Japanese: ja
-    - Chinese (simplified): zh
-*/
 
 function handleParsed(parsedText){
   translate(parsedText, targetLang)

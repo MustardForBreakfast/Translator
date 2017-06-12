@@ -23,6 +23,7 @@ Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dash
 
 ## Execution
 - `npm start`, wait for "Google is listening..." in the terminal, and start sayin stuff!
+- To change target language, adjust the `targetLang` value in `constants.js`.
 
 ## Tips
 - For best results, go somewhere quiet.
@@ -30,3 +31,4 @@ Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dash
 - Use headphones (or a separate microphone) to prevent the app from attempting to retranslate its own speech.
 - If you are in a quiet space, the app should stop listening to you after 5 seconds of silence. If you're somewhere noisey, it will keep listening until you shut it down (`ctrl c`).
 - The API cuts you off after 60 seconds - thats your maximum talk time per run.
+- If the mic is too sensetive / not sensetive enough, adjust `voiceThreshold` in `constants.js`.
