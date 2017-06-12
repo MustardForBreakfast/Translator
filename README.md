@@ -28,4 +28,5 @@ Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dash
 - For best results, go somewhere quiet.
 - Pause occasionally while speaking. Your input will be chunked more often and you will receive results more quickly and continuosly.
 - Use headphones (or a separate microphone) to prevent the app from attempting to retranslate its own speech.
-- The API cuts you off after 60 seconds, so that is your maximum talk time per run.
+- If you are in a quiet space, the app should stop listening to you after 5 seconds of silence. If you're somewhere noisey, it will keep listening until you shut it down (`ctrl c`).
+- The API cuts you off after 60 seconds - thats your maximum talk time per run.
