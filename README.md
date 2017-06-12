@@ -12,7 +12,7 @@ Once you've installed the SDK, you'll need to create a set of application creden
 Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dashboard), you will need to do the following: 
 - create a Google Cloud project and obtain a projectID. Enable Billing.
 - enable the Google Cloud Translation API and obtain an API key via the "Credentials" menu. 
-- enable the Google Cloud Speech API 
+- enable the Google Cloud Speech API.
 - create a service account via the "Credentials" menu and generate/download a JSON keyFile for it. Save the keyFile to the project root directory as `_keyFile.json`. If you do not use a keyFile, the speech streaming will still work, but the API will be unbearably slow to respond.
 
 ## Installation
