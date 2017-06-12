@@ -5,7 +5,7 @@ const projectID = _ENV.projectID;
 const translateKey = _ENV.translateKey;
 
 
-export default function translate(text, targetLanguage = 'ru'){
+export default function translate(text, targetLanguage){
   const translateClient = Translate({
     projectId: projectID,
     key: translateKey

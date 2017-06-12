@@ -6,6 +6,7 @@ import _ENV from '../_ENV';
 
 const projectID = _ENV.projectID;
 
+// not using this just now.
 export function streamToFile(){
   return new Promise((resolve, reject)=>{
     console.log('Starting stream...')
@@ -30,7 +31,7 @@ export function streamToFile(){
   })
 };
 
-export function streamToParser(){
+export function streamToParser(translateCallback){
   const speech = Speech({
     projectId: projectID,
     keyFilename: constants.keyFilename,
@@ -47,7 +48,8 @@ export function streamToParser(){
   const recognizeStream = speech.createRecognizeStream(request)
   .on('error', console.error)
   .on('data', (data) => {
-    console.log(data.results)
+    console.log('in english:', data.results)
+    translateCallback(data.results)
   });
 
   record

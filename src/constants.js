@@ -5,4 +5,14 @@ export default {
   encoding: 'LINEAR16',
   inputLanguage: 'en-US',
   keyFilename: './_keyFile.json',
+  macVoices: {
+    en: 'Tessa',
+    fr: 'Thomas',
+    es: 'Juan',
+    it: 'Luca',
+    ru: 'Milena',
+    de: 'Anna',
+    ja: 'Kyoko',
+    zh: 'Sin-ji',
+  }
 }

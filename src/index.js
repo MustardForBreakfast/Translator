@@ -1,34 +1,43 @@
 import translate from './translation';
 import { streamToParser } from './voiceStream';
+import constants from './constants';
+import * as child from 'child_process';
 
-streamToParser();
-
-/* translation code below. Its functional, but keep it off for now. */
-
+streamToParser(handleParsed);
 
 /* full list of language codes: https://cloud.google.com/translate/docs/languages 
 
- * English: en
- * Spanish: es
- * French: fr
- * Italian: it
- * Russian: ru
- * German: ge
- * Japanese: ja
- * Chinese (simplified): zh
-
+  Currently hooked up: 
+    - English: en
+    - Spanish: es
+    - French: fr
+    - Italian: it
+    - Russian: ru
+    - German: de
+    - Japanese: ja
+    - Chinese (simplified): zh
 */
 
-// const text = 'Hi, my name is Justin.';
-// const targetLang = 'es';
+function handleParsed(parsedText, targetLang = 'en'){
+  translate(parsedText, targetLang)
+  .then((results) => {
+    const translation = results[0];
+    console.log('translation: ', translation);
 
-// translate(text, targetLang)
-// .then((results) => {
-//   const translation = results[0];
+    const speak = child.exec(`sh ./speakText.sh ${getVoice(targetLang)} "${translation}"`)
+    .on('close', ()=>{
+      console.log('i have spoken.')
+    })
 
-//   console.log('original: ', text);
-//   console.log('translation: ', translation);
-// })
-// .catch((err) => {
-//   console.error('ERROR:', err);
-// });
+    speak.stderr.on('data', function(data){
+        console.log('error: ', data);
+    });
+  })
+  .catch((err) => {
+    console.error('ERROR:', err);
+  });  
+}
+
+function getVoice(langCode){
+  return constants.macVoices[langCode];
+}

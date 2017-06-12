@@ -3,5 +3,7 @@
 
 _ENV.js
 _keyFile.json
+npm-debug.log
+
 node_modules/*
 streams/*
