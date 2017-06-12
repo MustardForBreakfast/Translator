@@ -67,5 +67,5 @@ export function streamToParser(translateCallback){
   //   record.stop()
   // }, 15000)
 
-  console.log('Google is listening...')
+  console.log('Translator is listening...')
 };

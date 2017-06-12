@@ -44,7 +44,7 @@ function sayStuff(index){
     } else {
       isSpeaking = false;
       stuffToSay = [];
-      console.log('i have spoken.')
+      console.log('Translator has spoken.')
     }
   })
 
