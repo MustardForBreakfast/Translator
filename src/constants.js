@@ -1,6 +1,6 @@
 export default {
   // Set the target language:
-  targetLang: 'de',
+  targetLang: 'ja',
 
   /* 
     Language Options: 
@@ -12,6 +12,11 @@ export default {
       - German: de
       - Japanese: ja
       - Chinese (simplified): zh
+      - Hebrew: iw
+      - Portuguese: pt
+      - Arabic: ar
+      - Swedish: sv
+      - Dutch: nl
 
 
     Full list of language codes: https://cloud.google.com/translate/docs/languages
@@ -25,13 +30,18 @@ export default {
   inputLanguage: 'en-US',
   keyFilename: './_keyFile.json',
   macVoices: {
-    en: 'Tessa',
+    en: 'Karen',
     fr: 'Thomas',
     es: 'Juan',
     it: 'Luca',
-    ru: 'Milena',
+    ru: 'Yuri',
     de: 'Anna',
     ja: 'Kyoko',
     zh: 'Sin-ji',
+    iw: 'Carmit',
+    pt: 'Luciana',
+    ar: 'Maged',
+    sv: 'Alva',
+    nl: 'Ellen',
   }
 }
