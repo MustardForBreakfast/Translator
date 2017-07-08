@@ -4,6 +4,8 @@ A spoken-word translation tool that leverages Google's speech recognition and tr
 
 ## Requirements
 
+Translator depends on apple's built-in `say` command to vocalize results, so it only runs on MacOS.
+
 You will need to install the Google Cloud SDK on your system to use the translation and speech parsing APIs - visit https://cloud.google.com/sdk/docs/ for more information. Sadly the translation API aint free, but as of this writing, Google offers $300 in free credit on a trial account. So... still pretty free?
 
 Once you've installed the SDK, you'll need to create a set of application credentials. Run the following in your terminal:
@@ -38,4 +40,4 @@ When using "Expect a Novel" mode:
 
 ## FAQ
 - What is this? `Error: Audio data is being streamed too slow. Please stream audio data approximately at real time.`
-	- I haven't found a good answer yet, but it comes from the Google API. Its apparently a common error in many apps that consume the Speach API. Just try running your translation again.
+	- I haven't found a good answer yet, but it comes from the Google API. Its apparently a common error in many apps that consume the Speech API. Just try running your translation again.
