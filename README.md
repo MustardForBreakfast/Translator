@@ -28,9 +28,9 @@ Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dash
 - `npm install`
 - copy and rename `ENV_template.js` to `ENV.js`, fill in any values you obtained in the `Requirements` section above.
 
-## Execution
-- `npm start`, wait for "Translator is listening..." in the terminal, and start sayin stuff!
-- To change languages or to use "expect a novel" mode, adjust the values in `config.js`.
+## Usage
+- Select your input and output langages and `expectANovel` setting in `config.js`.
+- run `npm start`, wait for "Translator is listening..." in the terminal, and start sayin stuff!
 
 ## Tips
 - For best results, go somewhere quiet.
