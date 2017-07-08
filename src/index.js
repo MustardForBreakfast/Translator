@@ -4,6 +4,7 @@ import constants from './constants';
 import * as child from 'child_process';
 
 const targetLang = constants.targetLang;
+const sourceLang = constants.sourceLang;
 
 let stuffToSay = [];
 let isSpeaking = false;
@@ -12,7 +13,7 @@ streamToParser(handleParsed);
 
 
 function handleParsed(parsedText){
-  translate(parsedText, targetLang)
+  translate(parsedText, targetLang, sourceLang)
   .then((results) => {
     const translation = results[0];
     console.log('translation: ', translation);

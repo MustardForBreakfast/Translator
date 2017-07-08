@@ -1,33 +1,30 @@
+import config from '../config';
+
+const langCodesWithRegions = {
+  en: 'en-US',
+  es: 'es-MX',
+  fr: 'fr-FR',
+  it: 'it-IT',
+  ru: 'ru-RU',
+  ja: 'ja-JP',
+  zh: 'zh-HK',
+  iw: 'he-IL',
+  pt: 'pt-BR',
+  ar: 'ar-SA',
+  sv: 'sv-SE',
+  nl: 'nl-BE',
+}
+
 export default {
-  // Set the target language:
-  targetLang: 'ja',
-
-  /* 
-    Language Options: 
-      - English: en
-      - Spanish: es
-      - French: fr
-      - Italian: it
-      - Russian: ru
-      - German: de
-      - Japanese: ja
-      - Chinese (simplified): zh
-      - Hebrew: iw
-      - Portuguese: pt
-      - Arabic: ar
-      - Swedish: sv
-      - Dutch: nl
-
-
-    Full list of language codes: https://cloud.google.com/translate/docs/languages
-    NOTE: You will need to map any new language codes to additional MacOS voices.
-  */
-
+  targetLang: config.targetLanguage,
+  sourceLang: config.sourceLanguage,
 	streamPath: 'streams/voiceRecording.wav',
   sampleRate: 16000,
-  voiceThreshold: .6,
+  voiceThreshold: .5,
+  silenceBeforeCutoff: config.expectANovel ? '5.0' : '2.0',
   encoding: 'LINEAR16',
-  inputLanguage: 'en-US',
+  expectANovel: config.expectANovel,
+  inputLanguage: langCodesWithRegions[config.sourceLanguage],
   keyFilename: './_keyFile.json',
   macVoices: {
     en: 'Karen',

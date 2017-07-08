@@ -19,7 +19,7 @@ export function streamToFile(){
     record.start({
       sampleRate : constants.sampleRate,
       verbose : true,
-      silence: '3.0',
+      silence: constants.silenceBeforeCutoff,
       threshold: constants.voiceThreshold,
     })
     .pipe(file)
@@ -57,15 +57,17 @@ export function streamToParser(translateCallback){
     sampleRate: constants.sampleRate,
     threshold: constants.voiceThreshold,
     verbose: true,
-    silence: '5.0'
+    silence: constants.silenceBeforeCutoff
   })
   .on('error', console.error)
   .pipe(recognizeStream)
 
   // Set a max recording time to limit file size.
-  // setTimeout(function () {
-  //   record.stop()
-  // }, 15000)
+  if (!constants.expectANovel){
+    setTimeout(function () {
+      record.stop()
+    }, 10000)
+  }
 
   console.log('Translator is listening...')
 };
