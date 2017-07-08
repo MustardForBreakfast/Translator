@@ -16,15 +16,15 @@ const langCodesWithRegions = {
 }
 
 export default {
-  targetLang: config.targetLanguage,
-  sourceLang: config.sourceLanguage,
+  targetLang: config.outputLanguage,
+  sourceLang: config.inputLanguage,
 	streamPath: 'streams/voiceRecording.wav',
   sampleRate: 16000,
   voiceThreshold: .5,
   silenceBeforeCutoff: config.expectANovel ? '5.0' : '2.0',
   encoding: 'LINEAR16',
   expectANovel: config.expectANovel,
-  inputLanguage: langCodesWithRegions[config.sourceLanguage],
+  inputLanguage: langCodesWithRegions[config.inputLanguage],
   keyFilename: './_keyFile.json',
   macVoices: {
     en: 'Karen',

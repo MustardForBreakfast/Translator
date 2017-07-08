@@ -1,13 +1,8 @@
 //INSTRUCTIONS: configure the basic settings below, then run `npm start` and wait for "Translator is Listening...".
 
 export default {
-
-  // Do you plan to speak for a while (set to true), or should translator listen for just one phrase (set to false)?
-  expectANovel: false,
-  // NOTE: If true, use headphones. With speakers, translator might translate its own voice.
-
-  targetLanguage: 'en',
-  sourceLanguage: 'iw',
+  inputLanguage: 'iw',
+  outputLanguage: 'en',
     /* 
       Language Code Options: 
         - English: en
@@ -26,7 +21,10 @@ export default {
 
 
       Full list of language codes: https://cloud.google.com/translate/docs/languages
-      NOTE: If you add a ew language code above, you will need to add both a corresponding
-      region code and MacOS voice in `constants.js`.
+      NOTE: If you add a new language code above, you will need to add a corresponding
+      region code and a new MacOS voice in `constants.js`.
     */
+
+  // Do you plan to speak for a while (true), or are you translating just one quick phrase (false)?
+  expectANovel: false,
 }
