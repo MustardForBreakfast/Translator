@@ -4,11 +4,16 @@ A spoken-word translation tool that leverages Google's speech recognition and tr
 
 ## Requirements
 
-Translator depends on apple's built-in `say` command to vocalize results, so it only runs on MacOS.
+#### 1) A device running MacOS
+Translator currently depends on apple's built-in `say` command to vocalize results.
 
-You will need to install the Google Cloud SDK on your system to use the translation and speech parsing APIs - visit https://cloud.google.com/sdk/docs/ for more information. Sadly the translation API aint free, but as of this writing, Google offers $300 in free credit on a trial account. So... still pretty free?
+#### 2) The Google Cloud SDK
+You will need to install the Google Cloud SDK on your system to use the translation and speech parsing APIs - visit https://cloud.google.com/sdk/docs/ for more information.
 
-Once you've installed the SDK, you'll need to create a set of application credentials. Run the following in your terminal:
+#### 3) Google Cloud application credentials
+Once you've installed the SDK, you'll need to create a set of application credentials. Sadly the translation API aint free, but as of this writing, Google offers $300 in free credit on a trial account. So... still pretty free? 
+
+Run the following in your terminal:
 - `gcloud auth application-default login`
 
 Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dashboard), you will need to do the following: 
@@ -33,10 +38,11 @@ Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dash
 - The API cuts you off after 60 seconds - thats your maximum talk time per run.
 - If the mic is too sensetive / not sensetive enough, adjust `voiceThreshold` in `constants.js`.
 
-When using "Expect a Novel" mode:
+#### When using "Expect a Novel" mode:
 - Pause occasionally while speaking. Your input will be chunked more often and you will receive results more quickly and continuosly.
 - Use headphones (or a separate microphone) to prevent the app from attempting to retranslate its own speech from the speaker output.
-- If you are in a quiet space, the app should stop listening to you after 5 seconds of silence. If you are somewhere noisey, you will have to shut it down manually when you are done (`ctrl c`).
+- If you are in a quiet space, the app should stop listening to you after 5 seconds of silence. If you are somewhere noisey, you will have to shut it down manually when you are done speeking (`ctrl c`).
+- 60 seconds is still your maximum talk time, as imposed by the Google Speech api. (I guess its really more of a short story).
 
 ## FAQ
 - What is this? `Error: Audio data is being streamed too slow. Please stream audio data approximately at real time.`
