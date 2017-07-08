@@ -6,6 +6,7 @@ const langCodesWithRegions = {
   fr: 'fr-FR',
   it: 'it-IT',
   ru: 'ru-RU',
+  de: 'de-DE',
   ja: 'ja-JP',
   zh: 'zh-HK',
   iw: 'he-IL',
