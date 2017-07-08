@@ -40,4 +40,4 @@ When using "Expect a Novel" mode:
 
 ## FAQ
 - What is this? `Error: Audio data is being streamed too slow. Please stream audio data approximately at real time.`
-	- I haven't found a good answer yet, but it comes from the Google API. Its apparently a common error in many apps that consume the Speech API. Just try running your translation again.
+	- I haven't found a good answer yet, but it comes from the Google Speech API. Its apparently a common error for other apps that consume it as well. Just try running your translation again.
