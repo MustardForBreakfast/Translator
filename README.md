@@ -1,6 +1,6 @@
 ## Synopsis
 
-A translation tool that leverages Google's speech recognition and translation APIs. Currently takes English input.
+A spoken-word translation tool that leverages Google's speech recognition and translation APIs.
 
 ## Requirements
 
@@ -22,13 +22,20 @@ Next, via the Google Cloud dashboard (https://console.cloud.google.com/home/dash
 - copy and rename `ENV_template.js` to `ENV.js`, fill in any values you obtained in the `Requirements` section above.
 
 ## Execution
-- `npm start`, wait for "Google is listening..." in the terminal, and start sayin stuff!
-- To change target language, adjust the `targetLang` value in `constants.js`.
+- `npm start`, wait for "Translator is listening..." in the terminal, and start sayin stuff!
+- To change languages or to use "expect a novel" mode, adjust the values in `config.js`.
 
 ## Tips
 - For best results, go somewhere quiet.
-- Pause occasionally while speaking. Your input will be chunked more often and you will receive results more quickly and continuosly.
-- Use headphones (or a separate microphone) to prevent the app from attempting to retranslate its own speech.
-- If you are in a quiet space, the app should stop listening to you after 5 seconds of silence. If you're somewhere noisey, it will keep listening until you shut it down (`ctrl c`).
+- If you are in a quiet space, the app should stop listening to you after 2 seconds of silence. If you're somewhere noisey, it will keep listening until 15 seconds have gone by or until you shut it down (`ctrl c`).
 - The API cuts you off after 60 seconds - thats your maximum talk time per run.
 - If the mic is too sensetive / not sensetive enough, adjust `voiceThreshold` in `constants.js`.
+
+When using "Expect a Novel" mode:
+- Pause occasionally while speaking. Your input will be chunked more often and you will receive results more quickly and continuosly.
+- Use headphones (or a separate microphone) to prevent the app from attempting to retranslate its own speech from the speaker output.
+- If you are in a quiet space, the app should stop listening to you after 5 seconds of silence. If you are somewhere noisey, you will have to shut it down manually when you are done (`ctrl c`).
+
+## FAQ
+- What is this? `Error: Audio data is being streamed too slow. Please stream audio data approximately at real time.`
+	- I haven't found a good answer yet, but it comes from the Google API. Its apparently a common error in many apps that consume the Speach API. Just try running your translation again.
